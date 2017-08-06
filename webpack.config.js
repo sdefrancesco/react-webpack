@@ -6,16 +6,18 @@ module.exports = {
     },
     watch: true,
     module: {
-        loaders: [{
-                test: /\.css/,
-                loader: 'style-loader!css-loader'
-            },
+        loaders: [
             {
                 exclude: /(node_modules)/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2016', 'react']
                 }
+            },
+            {   
+                exclude: /(node_modules)/,
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
             },
         ]
     }
